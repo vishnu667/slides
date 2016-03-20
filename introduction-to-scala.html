@@ -1,0 +1,196 @@
+<html>
+
+<head>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+
+    <link rel="stylesheet" href="css/reveal.css">
+
+    <!-- Themes -->
+    <!-- <link rel="stylesheet" href="css/theme/sky.css" id="theme"> -->
+    <link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+    <link rel="stylesheet" href="css/highlight/github.css">
+
+    <!-- Custom Css  -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- 1.1) Introduction to scala and Functional Programming -->
+            <section>
+                <h2>Introduction to<h2>
+
+                  <img src="images/scala-logo.gif" class="borderlessImage" style="width:20%">
+                  <h4>&</h4>
+                  <img src="images/function-logo.png" class="borderlessImage" style="width:10%">
+
+                    <aside class="notes">
+                        Notes
+                    </aside>
+            </section>
+<!-- 2.1) Why Functional Programming -->
+            <section>
+                  <section>
+                  <h2>Why Functional Programming ? </h2>
+            </section>
+            <section>
+                <div class="leftPane">
+                    <h4> The Challenge </h4>
+                    <ul>
+                        <li>Moores law now achieved by increasing the number of cores.</li>
+                        <li>Huge workloads that requires horizontal scaling</li>
+                        <li>"PPP" <i>Grand Challenge</i></li>
+                    </ul>
+                </div>
+                <div class="rightPane">
+                    <img src="images/cpu-trends.jpg" class="borderlessImage">
+                </div>
+                <aside class="notes">
+                    PPP - Popular Prallel Programming
+                </aside>
+            </section>
+            <section>
+                <h2> Concurrency and Parallelism</h2>
+                <div class="leftPane">
+                    Parallel Programming
+                    <br>
+                    <br>
+                    <i>Executes Programs faster on parallel hardware</i>
+                </div>
+                <div class="rightPane">
+                    Concurrent programming
+                    <br>
+                    <br>
+                    <i>
+                          Manage concurrent execution threads explicitly
+                        </i>
+                </div>
+            </section>
+            <section>
+                <h2> The root of the problem</h2>
+                <div class="leftPane">
+                    <ul>
+                        <li><i>non-determinism</i> caused by concurrent threads accessing shared mutable state.</li>
+                    </ul>
+                </div>
+                <div class="rightPane" style="text-align:left">
+                    <pre><code class="hljs javascript" data-trim >
+var x = 0
+async { x = x+1 }
+async { x = x*2 }
+// Can give 0,1,2
+                        </code></pre>
+                </div>
+                <br clear="left">
+                <br>
+                <ul>
+                    <li>It helps to encapsulate state in actors or transactions, but the fundamental problem stays the same.</li>
+                    <li><i>non-determinism = parallel processing + mutable state </i></li>
+                    <li>To get a <i>deterministic</i> processing, avoid the mutable state!</li>
+                    <li>Avoiding mutable state means programming functionally.</li>
+                </ul>
+            </section>
+
+            </section>
+            <!-- 3.1) Why Scala -->
+            <section>
+                <section>
+                    <h2>Why Scala ?</h2></section>
+                <section>
+                    <h3> Scala is a Unifier </h3>
+                    <img src="images/scala-is-a-unifier.jpg" class="borderles">
+                </section>
+                <section >
+                  <h3>Scala's ToolBox</h3>
+                  <div style="text-align:left">
+                  <h4>Parallelism : </h4>
+                  <div class="leftPane">Collections<br><br></div>
+                   <div class="rightPane">
+                     Parallel Collections <br>
+                     Distributed Collecctions<br>
+                   </div>
+                   <br clear="left">
+                   <br>
+<h4>Concurrency :</h4>
+<div class="leftPane">Actors<br>
+                  Software Transactional memory<br>
+                  Futures<br></div>
+<div class="rightPane"><br>Akka</div>
+</div>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            slideNumber: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [{
+                src: 'lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            }, {
+                src: 'plugin/markdown/marked.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/markdown/markdown.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: 'plugin/zoom-js/zoom.js',
+                async: true
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }]
+        });
+    </script>
+
+</body>
+
+</html>
