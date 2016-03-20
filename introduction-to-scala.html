@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="css/theme/league.css" id="theme">
 
     <!-- Code syntax highlighting -->
-    <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
-    <link rel="stylesheet" href="css/highlight/github.css">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- <link rel="stylesheet" href="css/highlight/github.css"> -->
 
     <!-- Custom Css  -->
     <link rel="stylesheet" href="css/main.css">
@@ -123,23 +123,103 @@ async { x = x*2 }
                     <h3> Scala is a Unifier </h3>
                     <img src="images/scala-is-a-unifier.jpg" class="borderles">
                 </section>
-                <section >
-                  <h3>Scala's ToolBox</h3>
-                  <div style="text-align:left">
-                  <h4>Parallelism : </h4>
-                  <div class="leftPane">Collections<br><br></div>
-                   <div class="rightPane">
-                     Parallel Collections <br>
-                     Distributed Collecctions<br>
-                   </div>
-                   <br clear="left">
-                   <br>
-<h4>Concurrency :</h4>
-<div class="leftPane">Actors<br>
-                  Software Transactional memory<br>
-                  Futures<br></div>
-<div class="rightPane"><br>Akka</div>
-</div>
+                <section>
+                    <h3>Scala's ToolBox</h3>
+                    <div style="text-align:left">
+                        <h4>Parallelism : </h4>
+                        <div class="leftPane">Collections
+                            <br>
+                            <br>
+                        </div>
+                        <div class="rightPane">
+                            Parallel Collections
+                            <br> Distributed Collecctions
+                            <br>
+                        </div>
+                        <br clear="left">
+                        <br>
+                        <h4>Concurrency :</h4>
+                        <div class="leftPane">Actors
+                            <br> Software Transactional memory
+                            <br> Futures
+                            <br>
+                        </div>
+                        <div class="rightPane">
+                            <br>Akka</div>
+                    </div>
+                </section>
+            </section>
+            <!-- 4.1) Few Examples -->
+            <section>
+                <section>
+                    <h2>Few Examples</h2></section>
+                <section>
+                    <h3> A Class ... </h3>
+                    <p class="fragment"> Java :
+                        <br>
+                        <pre><code class="hljs java fragment" data-trim >
+  public class Person {
+    public final String name;
+    public final int age;
+    Person(String name, int age) {
+      this.name = name;
+      this.age = age;
+    }
+  }</code></pre>
+                    </p>
+                    <p class="fragment"> Scala :
+                        <br>
+                        <pre><code class="hljs scala fragment" data-trim >
+
+class Person(val name:String,val age:Int)
+
+</code></pre>
+                    </p>
+
+                </section>
+                <section>
+                  <h3> ... and its usage </h3>
+                  <p class="fragment"> Java :
+                      <br>
+                      <pre><code class="hljs java fragment" data-trim >
+import java.util.ArrayList;
+...
+Person[] people;
+Person[] minors;
+Person[] adults;
+{
+  ArrayList&lt;Person&gt; minorsList = new ArrayList&lt;Person&gt();
+  ArrayList&lt;Person&gt adultsList = new ArrayList&lt;Person&gt();
+    for(int i = 0 ; i< people.length; i++)
+      (people[i].age < 18 ? minorsList:adultsList).add(people[i]);
+  minors = minorsList;
+  adults = adultsList;
+}
+</code></pre>
+                  </p>
+                  <p class="fragment"> Scala :
+                      <br>
+                      <pre><code class="hljs scala fragment" data-trim >
+val people : Array[Person]
+val (minor, adults) = people partion (_.age < 18)
+
+</code></pre>
+                  </p>
+                </section>
+                <section>
+                    <h3> Going Parallel </h3>
+                    <p class="fragment" data-fragment-index="3"> Java :
+                        <br>
+                        <h1 class="fragment" data-fragment-index="4"> ? </h1>
+                    </p>
+                    <p class="fragment" data-fragment-index="1"> Scala :
+                        <br>
+                        <pre><code class="hljs scala fragment" data-fragment-index="2" data-trim >
+val people : Array[Person]
+val (minor, adults) = people.par partion (_.age < 18)
+                        </code></pre>
+                    </p>
+
                 </section>
             </section>
         </div>
