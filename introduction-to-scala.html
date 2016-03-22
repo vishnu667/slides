@@ -340,11 +340,30 @@ Hello, world! hey,how,are,you
                 </code></pre>
             </section>
             <section>
-                <h3>Build Tools</h3>
-                <h4>Maven</h4>
-                <p>
-                    
-                </p>
+                <h3>Build Tools - Maven</h3>
+                <pre><code class="hljs " data-trim data-noescape><!--@formatter:off-->$ mvn archetype:generate \
+-DarchetypeGroupId=net.alchim31.maven \
+-DarchetypeArtifactId=scala-archetype-simple \
+-DarchetypeVersion=1.5 \
+
+$ tree simple
+simple
+|-- pom.xml
+`-- src
+    |-- main
+    |   `-- scala
+    |       `-- test
+    |           `-- App.scala
+    `-- test
+        `-- scala
+            `-- samples
+                |-- junit.scala
+                |-- scalatest.scala
+                `-- specs.scala
+
+7 directories, 5 files<!--@formatter:on--></code></pre>
+<pre><code class="hljs " data-trim data-noescape>mvn exec:java -Dexec.mainClass="test.App"</code></pre>
+<p>To create a java scala Mixin Project check <a href="http://vishnu667.github.io/maven-scala-and-java-project-pom-file-example/">link</a></p>
             </section>
         </section>
         <section>
@@ -403,6 +422,7 @@ Hello, world! hey,how,are,you
                 async: true
             }]
         });
+
 
 
 
