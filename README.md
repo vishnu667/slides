@@ -1,7 +1,7 @@
 # Slides for Scala Presentation
 
 
-## [Slide 1 - Introduction to Scala](introduction-to-scala.html)
+[Checkout the link](http://vishnu667.github.io/slides/)
 
 
 [References](References.md)

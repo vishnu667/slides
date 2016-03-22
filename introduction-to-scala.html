@@ -1,14 +1,11 @@
 <html>
 
 <head>
-
+    <title>Introduction Scala & Functional Programming</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="css/reveal.css">
 
     <!-- Themes -->
@@ -21,7 +18,6 @@
 
     <!-- Custom Css  -->
     <link rel="stylesheet" href="css/main.css">
-
 
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
@@ -362,15 +358,58 @@ simple
                 `-- specs.scala
 
 7 directories, 5 files<!--@formatter:on--></code></pre>
-<pre><code class="hljs " data-trim data-noescape>mvn exec:java -Dexec.mainClass="test.App"</code></pre>
-<p>To create a java scala Mixin Project check <a href="http://vishnu667.github.io/maven-scala-and-java-project-pom-file-example/">link</a></p>
+                <pre><code class="hljs " data-trim data-noescape>mvn exec:java -Dexec.mainClass="test.App"</code></pre>
+                <p>To create a java scala Mixin Project check <a
+                        href="http://vishnu667.github.io/maven-scala-and-java-project-pom-file-example/">link</a></p>
+            </section>
+            <section>
+                <h3>Build Tools - sbt</h3>
+                <pre><code class="hljs " data-trim data-noescape><!--@formatter:off-->
+$ sbt
+[info] Set current project to test (in build file:/home/vishnu/learning/test/)
+> run
+[info] Updating {file:/home/vishnu/learning/test/}test...
+[info] Resolving org.fusesource.jansi#jansi;1.4 ...
+[info] Done updating.
+[info] Compiling 1 Scala source to /home/vishnu/learning/test/target/scala-2.10/classes...
+[info] 'compiler-interface' not yet compiled for Scala 2.10.6. Compiling...
+[info]   Compilation completed in 16.501 s
+[info] Running HelloWorld
+Hello, world!
+[success] Total time: 20 s, completed 22 Mar, 2016 2:27:10 PM
+> run hey how are you
+[info] Running HelloWorld hey how are you
+Hello, world! hey,how,are,you
+[success] Total time: 0 s, completed 22 Mar, 2016 2:27:59 PM
+>
+<!--@formatter:on--></code></pre>
+                <p style="text-align:right;">
+                    <a href="http://www.scala-sbt.org/0.13/docs/Setup.html">
+                        Sbt Installation Guide
+                    </a>
+                </p>
+            </section>
+
+            <section>
+                <h3>Build Tools - sbt Dependencies</h3>
+            <pre><code class="hljs " data-trim data-noescape><!--@formatter:off-->$ cat build.sbt
+name := "sbtExample"
+
+version := "1.0"
+
+scalaVersion := "2.10.0"
+
+resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
+
+libraryDependencies += "com.typesafe.akka" % "akka-actor_2.10" % "2.2-M1"
+libraryDependencies += "com.typesafe" % "config" % "1.3.0"<!--@formatter:on--></code></pre>
             </section>
         </section>
         <section>
-            <h3>Thank you </h3>
+            <h3>Hope i didn't bore you folks ?</h3>
             <p>
                 <br>
-                Next Slide : <a>Scala Basics</a>
+                Next Slide : <a href="scala-basics.html">Scala Basics</a>
                 <br><br><br><br>
             </p>
             <div class="bottom-text-div">
@@ -422,12 +461,6 @@ simple
                 async: true
             }]
         });
-
-
-
-
-
-
 </script>
 
 </body>
