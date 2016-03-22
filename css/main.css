@@ -22,3 +22,16 @@ div .rightPane {
   padding-left: 2%;
   padding-right: 2%;
 }
+
+
+.bottom-text-div {
+    position: relative;
+
+}
+
+.bottom-text-div span {
+   margin-top:5px;
+   position: absolute;
+   bottom: 0;
+   right: 0;
+}
