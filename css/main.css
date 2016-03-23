@@ -5,6 +5,9 @@
   background: none;
 }
 
+.reveal section p {
+padding-left: 5%;
+}
 
 div .leftPane {
   float: left;
