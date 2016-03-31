@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e # halt script on error
+
+bundle exec htmlproof ./ --disable-external
+bundle exec ruby script/proof.rb
