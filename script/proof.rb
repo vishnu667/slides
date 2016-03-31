@@ -1,6 +1,6 @@
 require 'html/proofer'
 
-HTML::Proofer.new('./_site',   verbosity: :error,
+HTML::Proofer.new('./',   verbosity: :error,
                                ssl_verifypeer: false,
                                url_ignore: [
                                  /plus.google.com\/share/,
@@ -15,4 +15,9 @@ HTML::Proofer.new('./_site',   verbosity: :error,
                                  /stackoverflow.com\/users\/2104970\/vishnu667/,
                                  /twitter.com\/vishnu667/,
                                  /www.flickr.com\/vishnu667/
-                               ]).run
+                               ],
+                               file_ignore:[
+                                 /node_modules/,
+                                 /plugin/,
+                                 /test/
+                                 ]).run
