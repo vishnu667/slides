@@ -168,6 +168,214 @@ returnFalse // Also returns false, you can avoid parenthesis
 
 foo // Try this one out ?<!--@formatter:on--></code></pre>
             </section>
+            <section>
+                <h3>Suffix Notation</h3>
+                <p>
+                    Scala allows methods of arity-0 to be invoked using suffix notation:
+                </p>
+                <pre><code style="max-height: 450px;" data-trim data-noescape><!--@formatter:off-->
+scala> val names = "Vishnu,Prasad,Suresh,Ravi" split ","
+names: Array[String] = Array(Vishnu, Prasad, Suresh, Ravi)
+
+names.toList
+// is the same as
+names toList // Unsafe, don't use!
+
+//This style is unsafe, and should not be used.
+//Since semicolons are optional,
+//the compiler will attempt to treat it as an infix method if it can,
+//potentially taking a term from the next line.
+
+names toList
+val answer = 42        // will not compile!
+                    <!--@formatter:on--></code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                Apply Method
+            </section>
+            <section>
+                <p>
+                    Apply methods give you a nice syntactic sugar for when a class or object has one main use.
+                </p>
+                <pre><code data-noescape data-trim><!--@formatter:off-->
+scala> class Foo {
+     |   def apply() = 0
+     | }
+defined class Foo
+
+scala> object FooMaker {
+|   def apply() = new Foo
+| }
+defined module FooMaker
+
+scala> val newFoo = FooMaker()
+newFoo: Foo = Foo@5b83f762
+
+scala> newFoo()
+res8: Int = 0<!--@formatter:on--></code></pre>
+            </section>
+            <section>
+                <pre><code data-noescape data-trim><!--@formatter:off-->scala> val a = Array(1,2,3)
+a: Array[Int] = Array(1, 2, 3)
+
+scala> a(1)
+res5: Int = 2
+
+scala> val b = Map(1->"One",2->"Two")
+b: scala.collection.immutable.Map[Int,String] = Map(1 -> One, 2 -> Two)
+
+scala> b(1)
+res3: String = One
+
+scala> b(2)
+res4: String = Two<!--@formatter:on--></code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                Control Structures
+            </section>
+            <section>
+                <h3>If Statement</h3>
+                <pre><code data-noescape data-trim><!--@formatter:off-->
+if (condition)
+    //Sucess Block
+else
+    //Failure Block
+
+val a = 10
+val b= 13
+if(a>b) {
+    println(a+" is greater")
+} else {
+    println(b+" is greater")
+}
+
+if(a>b) println(a+" is greater") else println(b+" is greater")
+
+<!--@formatter:on--></code></pre>
+            </section>
+            <section>
+                <h3>If Statement</h3>
+                <pre><code data-noescape data-trim><!--@formatter:off-->scala> def abs(x: Int): Int = if (x > 0) x else -x
+abs: (x: Int)Int
+
+scala> abs(-10)
+res14: Int = 10
+
+scala> val x = 10
+x: Int = 10
+
+scala> val absoluteX = if (x > 0) x else -x
+absoluteX: Int = 10
+
+scala> val y = -10
+y: Int = -10
+
+scala> val absoluteY = if (y > 0) y else -y
+absoluteY: Int = 10<!--@formatter:on--></code></pre>
+            </section>
+            <section>
+                <h3>For Loop</h3>
+                <pre><code data-noescape data-trim><!--@formatter:off-->for ( var x <- Range) {
+  //Code Block
+}
+
+for (x <- 1 to 10) {
+  println("Value of x: " + x)
+}
+
+val (a, b) = (1 to 5).map(i => (i, i*10)).toArray.unzip
+
+for(x<-a;y<-b){
+  println(x,y)
+}
+<!--@formatter:on--></code></pre>
+            </section>
+            <section>
+                <h3>For Loop with Yield</h3>
+                <pre><code data-noescape data-trim><!--@formatter:off-->
+for {
+  x <- a
+} yield x
+
+for {
+  x <- a
+  y <- b
+} yield (x,y)
+
+for {
+  x <- a
+  y <- b
+} yield (x,y,x&lty)
+
+<!--@formatter:on--></code></pre>
+                <p class="noteGreen">
+                    For further Reading on Yield checkout : <a
+                        href="http://docs.scala-lang.org/tutorials/FAQ/yield.html">How does yield work?</a>
+                </p>
+
+            </section>
+            <section>
+                <h3>While Loop</h3>
+                <pre><code data-noescape data-trim><!--@formatter:off-->
+while(condition){
+   statement(s);
+}
+
+var i = 0
+while (i < 20) {
+  println("Value of i: " + i)
+  i = i + 1
+}
+
+while (true) {
+  println("Infinite Loop")
+}
+        <!--@formatter:on--></code></pre>
+                <p class="note">
+                    Note: Never omit braces (while cannot be used in a pure-functional manner).
+                </p>
+            </section>
+            <section>
+                <h3>Pattern Matching</h3>
+                <pre><code data-noescape data-trim><!--@formatter:off-->
+x match {
+  case value => { //Code Block }
+  case value => { //Code Block }
+  case _ => { //Default Code Block }
+}
+
+x match {
+  case _:Type => { //Code Block }
+  case _:Type => { //Code Block }
+  case _ => { //Default Code Block }
+}
+        <!--@formatter:on--></code></pre>
+                <p class="left">Scala has a built-in general pattern matching mechanism. It allows to match on any sort of data with a first-match policy.</p>
+            </section>
+            <section>
+                <h3>Pattern Matching</h3>
+                <pre><code data-noescape data-trim><!--@formatter:off-->x match {
+  case "One" => 1
+  case "Two" => 2
+  case _ => 0
+}
+
+x match {
+  case _: String => x.asInstanceOf[String]
+  case _: Double => x.asInstanceOf[Double].toString
+  case _ => x.toString
+}
+
+x match {
+  case v: String => v.toString
+  case v: Double => v.toString
+  case v => v.toString
+}<!--@formatter:on--></code></pre>
+            </section>
         </section>
         <section>
             <h3>Thank you</h3>
@@ -225,13 +433,6 @@ foo // Try this one out ?<!--@formatter:on--></code></pre>
                 async: true
             }]
         });
-
-
-
-
-
-
-
 
 
 
