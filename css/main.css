@@ -1,40 +1,86 @@
-
+.reveal section .left {
+text-align:left;
+}
+.reveal section .right {
+text-align:right;
+}
 .reveal section img {
-  box-shadow: none;
-  border: 0;
-  background: none;
+    box-shadow: none;
+    border: 0;
+    background: none;
 }
-
 .reveal section p {
-padding-left: 5%;
+    padding-left: 5%;
 }
-
 div .leftPane {
-  float: left;
-  width: 45%;
-  padding-left: 2%;
-  padding-right: 2%;
-  border-right-width: 0.1em;
-  border-color: white;
-  border-style: solid;
+    float: left;
+    width: 45%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-right-width: 0.1em;
+    border-color: white;
+    border-style: solid;
 }
-
 div .rightPane {
-  float: right;
-  width: 45%;
-  padding-left: 2%;
-  padding-right: 2%;
+    float: right;
+    width: 45%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
-
-
 .bottom-text-div {
     position: relative;
-
 }
-
 .bottom-text-div span {
-   margin-top:5px;
-   position: absolute;
-   bottom: 0;
-   right: 0;
+    margin-top: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.reveal section .note {
+    text-align: left;
+    font-size: x-large;
+    position: relative;
+    width: 80%;
+    padding: 1em 1.5em;
+    margin: 2em auto;
+    color: #fff;
+    background: #C93213;
+    -moz-border-radius: 5px 0 5px 5px;
+    border-radius: 5px 0 5px 5px;
+}
+.reveal section .note:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-style: solid;
+    border-color: #fff #fff #97010A #97010A;
+    -moz-border-radius: 0 0 0 5px;
+    border-radius: 0 0 0 5px;
+}
+.reveal section .note a { color: #ADD9E4; }
+.reveal section .noteGreen {
+    text-align: left;
+    font-size: x-large;
+    position: relative;
+    width: 80%;
+    padding: 1em 1.5em;
+    margin: 2em auto;
+    color: #fff;
+    background: #218A3B;
+    -moz-border-radius: 5px 0 5px 5px;
+    border-radius: 5px 0 5px 5px;
+}
+.reveal section .noteGreen a { color: #ADD9E4; }
+.reveal section .noteGreen:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-style: solid;
+    border-color: #fff #fff #0C6321 #0C6321;
+    -moz-border-radius: 0 0 0 5px;
+    border-radius: 0 0 0 5px;
 }
