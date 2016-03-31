@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
-ruby script/proof.rb
+bundle exec ruby script/proof.rb
