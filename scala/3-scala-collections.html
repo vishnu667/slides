@@ -42,8 +42,123 @@
                 <p>Mutable vs Immutable objects</p>
             </section>
             <section>Mutable instances is passed by reference.</section>
-            <section>Imutable instances is passed by value.</section>
+            <section>Immutable instances is passed by value.</section>
         </section>
+        <section>
+          <section>
+            <p>Array's</p>
+          </section>
+          <section>
+            <p>Immutable Array Declaration</p>
+            <pre><code data-trim data-noescape><!--@formatter:off-->
+scala> val a = Array(1,2,3,4)
+a: Array[Int] = Array(1, 2, 3, 4)
+
+scala> val b = Array("1","2","3")
+b: Array[String] = Array(1, 2, 3)
+
+scala> val c = Array("1",2,3.0)
+c: Array[Any] = Array(1, 2, 3.0)
+
+<!--@formatter:on--></code></pre>
+          </section>
+          <section>
+            <p>Immutable Fixed Length Arrays</p>
+            <pre><code data-trim data-noescape><!--@formatter:off-->
+// Create an array of specific Size
+scala> val chars = Array.fill(256){0}
+chars: Array[Int] = Array(0, 0, 0, 0, 0, 0, 0 ....
+
+// To create an array of size 256 with random numbers
+scala> val rand = Array.fill(256){math.random}
+rand: Array[Double] = Array(0.9874994240791204, 0.07789405624008006,....
+
+// The section {} or {math.random} can be replaced with any function Block,
+// Which would fill up or return the values required for the array.
+scala>val elements = Array.fill(256){ function }
+
+<!--@formatter:on--></code></pre>
+          </section>
+          <section>
+            <p>Mutable ArrayBuffers</p>
+            <pre><code data-trim data-noescape><!--@formatter:off-->
+scala> val buf = scala.collection.mutable.ArrayBuffer.empty[Int]
+buf: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer()
+
+scala> buf += 1
+res2: buf.type = ArrayBuffer(1)
+
+scala> buf += 10
+res3: buf.type = ArrayBuffer(1, 10)
+
+scala> buf.toArray
+res4: Array[Int] = Array(1, 10)
+
+<!--@formatter:on--></code></pre>
+          </section>
+          </section>
+          <section>
+          <section>
+            <p>Array Usage</p>
+            <pre><code data-trim data-noescape><!--@formatter:off-->
+scala> val a = Array(1,2,3,4)
+a: Array[Int] = Array(1, 2, 3, 4)
+
+scala> a(1)
+res0: Int = 2
+
+scala> a.head
+res2: Int = 1
+
+scala> a.last
+res4: Int = 4
+
+<!--@formatter:on--></code></pre>
+          </section>
+          <section>
+            <p>Array Usage continuation</p>
+            <pre><code data-trim data-noescape><!--@formatter:off-->
+// Appending to an Array
+scala> a :+ 5
+res7: Array[Int] = Array(1, 2, 3, 4, 5)
+
+// Prepending to an Array
+scala> 0 +: a
+res9: Array[Int] = Array(0, 1, 2, 3, 4)
+
+// Joining Two Arrays
+scala> a ++ Array(10,11,12)
+res10: Array[Int] = Array(1, 2, 3, 4, 10, 11, 12)
+
+<!--@formatter:on--></code></pre>
+          </section>
+          <section>
+            <p>ArrayBuffer Usage</p>
+            <pre><code data-trim data-noescape><!--@formatter:off-->scala> val buf  =scala.collection.mutable.ArrayBuffer.empty[Int]
+
+scala> buf +=1
+res20: buf.type = ArrayBuffer(1)
+
+scala> buf +=2
+res21: buf.type = ArrayBuffer(1, 2)
+
+scala> buf +=3
+res21: buf.type = ArrayBuffer(1, 2, 3)
+
+scala> buf append 6
+scala> buf prepend 8
+
+scala> buf
+res28: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(8, 1, 2, 3, 6)
+
+<!--@formatter:on--></code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            Traversing Arrays
+          </section>
+          </section>
         <section>
             <h3>Thank you</h3>
             <p>
