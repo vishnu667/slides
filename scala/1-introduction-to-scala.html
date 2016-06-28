@@ -236,6 +236,36 @@ val (minor, adults) = people.par partion (_.age < 18)
 
             </section>
         </section>
+        <!-- Things I miss so much in Java-->
+        <section>
+            <section>
+                <h2>Things I miss so much in Java</h2>
+            </section>
+            <section>
+                <p> I don't remember the last time I saw a </p>
+                <pre><code data-trim data-noescape>
+                    <!-- @formatter:off-->
+java.lang.NullPointerException
+	at $line23.$read$$iw$$iw$.liftedTree1$1(<console>:13)
+	at $line23.$read$$iw$$iw$.<init>(<console>:13)
+	at $line23.$read$$iw$$iw$.<clinit>(<console>)
+	at $line23.$eval$.$print$lzycompute(<console>:7)
+	at $line23.$eval$.$print(<console>:6)
+	at $line23.$eval.$print(<console>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+                    <!-- @formatter:on-->
+                </code></pre>
+                <p class="noteGreen"> Thanks to how the values from JavaMethods are returned within the Option Class.
+                    <br>Note : Ignoring it and directly calling a the get Function can still lead to faulty code.</p>
+            </section>
+            <section>
+                <p>The Painful way of writing parallel and concurrent applications</p>
+                <p>No more Runnable Blocks of code.</p>
+            </section>
+        </section>
         <!-- 5.1) Getting Started-->
         <section>
             <section>
@@ -410,7 +440,7 @@ libraryDependencies += "com.typesafe" % "config" % "1.3.0"<!--@formatter:on--></
             <h3>Thank you </h3>
             <p>
                 <br>
-                Next Slide : <a href="scala-basics.html">Scala Basics</a>
+                Next Slide : <a href="2-scala-basics.html">2- Scala-basics</a>
                 <br><br><br><br>
             </p>
             <div class="bottom-text-div">
