@@ -5,8 +5,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="../css/reveal.css">
 
     <!-- Themes -->
@@ -26,31 +25,31 @@
 </head>
 
 <body>
-<div class="reveal">
-    <div class="slides">
+    <div class="reveal">
+        <div class="slides">
 
-        <!-- 1.1) Introduction to scala and Functional Programming -->
-        <section>
-            <h2> Functions and more about Functions</h2>
-            <p> Work in progress<br>
-                Previous slide : <a href="2-scala-basics.html">2- Scala-basics</a>
-            </p>
-        </section>
-        <section>
+            <!-- 1.1) Introduction to scala and Functional Programming -->
             <section>
-                <p>Before we get on with the collections lets have a word on</p>
-                <p>Mutable vs Immutable objects</p>
+                <h2> Functions and more about Functions</h2>
+                <p> Work in progress
+                    <br> Previous slide : <a href="2-scala-basics.html">2- Scala-basics</a>
+                </p>
             </section>
-            <section>Mutable instances is passed by reference.</section>
-            <section>Immutable instances is passed by value.</section>
-        </section>
-        <section>
-          <section>
-            <p>Array's</p>
-          </section>
-          <section>
-            <p>Immutable Array Declaration</p>
-            <pre><code data-trim data-noescape><!--@formatter:off-->
+            <section>
+                <section>
+                    <p>Before we get on with the collections lets have a word on</p>
+                    <p>Mutable vs Immutable objects</p>
+                </section>
+                <section>Mutable instances is passed by reference.</section>
+                <section>Immutable instances is passed by value.</section>
+            </section>
+            <section>
+                <section>
+                    <p>Array's</p>
+                </section>
+                <section>
+                    <p>Immutable Array Declaration</p>
+                    <pre><code data-trim data-noescape><!--@formatter:off-->
 scala> val a = Array(1,2,3,4)
 a: Array[Int] = Array(1, 2, 3, 4)
 
@@ -61,10 +60,10 @@ scala> val c = Array("1",2,3.0)
 c: Array[Any] = Array(1, 2, 3.0)
 
 <!--@formatter:on--></code></pre>
-          </section>
-          <section>
-            <p>Immutable Fixed Length Arrays</p>
-            <pre><code data-trim data-noescape><!--@formatter:off-->
+                </section>
+                <section>
+                    <p>Immutable Fixed Length Arrays</p>
+                    <pre><code data-trim data-noescape><!--@formatter:off-->
 // Create an array of specific Size
 scala> val chars = Array.fill(256){0}
 chars: Array[Int] = Array(0, 0, 0, 0, 0, 0, 0 ....
@@ -78,10 +77,10 @@ rand: Array[Double] = Array(0.9874994240791204, 0.07789405624008006,....
 scala>val elements = Array.fill(256){ function }
 
 <!--@formatter:on--></code></pre>
-          </section>
-          <section>
-            <p>Mutable ArrayBuffers</p>
-            <pre><code data-trim data-noescape><!--@formatter:off-->
+                </section>
+                <section>
+                    <p>Mutable ArrayBuffers</p>
+                    <pre><code data-trim data-noescape><!--@formatter:off-->
 scala> val buf = scala.collection.mutable.ArrayBuffer.empty[Int]
 buf: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer()
 
@@ -95,12 +94,12 @@ scala> buf.toArray
 res4: Array[Int] = Array(1, 10)
 
 <!--@formatter:on--></code></pre>
-          </section>
-          </section>
-          <section>
-          <section>
-            <p>Array Usage</p>
-            <pre><code data-trim data-noescape><!--@formatter:off-->
+                </section>
+            </section>
+            <section>
+                <section>
+                    <p>Array Usage</p>
+                    <pre><code data-trim data-noescape><!--@formatter:off-->
 scala> val a = Array(1,2,3,4)
 a: Array[Int] = Array(1, 2, 3, 4)
 
@@ -114,10 +113,10 @@ scala> a.last
 res4: Int = 4
 
 <!--@formatter:on--></code></pre>
-          </section>
-          <section>
-            <p>Array Usage continuation</p>
-            <pre><code data-trim data-noescape><!--@formatter:off-->
+                </section>
+                <section>
+                    <p>Array Usage continuation</p>
+                    <pre><code data-trim data-noescape><!--@formatter:off-->
 // Appending to an Array
 scala> a :+ 5
 res7: Array[Int] = Array(1, 2, 3, 4, 5)
@@ -131,10 +130,10 @@ scala> a ++ Array(10,11,12)
 res10: Array[Int] = Array(1, 2, 3, 4, 10, 11, 12)
 
 <!--@formatter:on--></code></pre>
-          </section>
-          <section>
-            <p>ArrayBuffer Usage</p>
-            <pre><code data-trim data-noescape><!--@formatter:off-->scala> val buf  =scala.collection.mutable.ArrayBuffer.empty[Int]
+                </section>
+                <section>
+                    <p>ArrayBuffer Usage</p>
+                    <pre><code data-trim data-noescape><!--@formatter:off-->scala> val buf  =scala.collection.mutable.ArrayBuffer.empty[Int]
 
 scala> buf +=1
 res20: buf.type = ArrayBuffer(1)
@@ -152,30 +151,100 @@ scala> buf
 res28: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(8, 1, 2, 3, 6)
 
 <!--@formatter:on--></code></pre>
-          </section>
-        </section>
-        <section>
-          <section>
-            Traversing Arrays
-          </section>
-          </section>
-        <section>
-            <h3>Thank you</h3>
-            <p>
-                <br>
-                Next Slide : <a href="4-scala-functions.html">4- Scala-functions</a>
-                <br><br><br><br>
-            </p>
-            <div class="bottom-text-div">
-                <span> By <a href="https://github.com/vishnu667">Vishnu Prasad</a></span>
-            </div>
-        </section>
-    </div>
-</div>
-<script src="../lib/js/head.min.js"></script>
-<script src="../js/reveal.js"></script>
+                </section>
+            </section>
+            <section>
+                <section>
+                    Traversing Arrays
+                </section>
+                <section>
+                    <pre><code data-trim data-noescape><!--@formatter:off-->
+scala> val a = 0 to 10 toArray
+a: Array[Int] = Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
-<script>
+scala> a.foreach(i:String=>println(i))
+
+scala> a.foreach(println(_))
+
+scala> a.foreach(println)
+
+scala> a.foreach(i=> {
+     | println(i)
+     | }
+     | )
+
+<!--@formatter:on--></code></pre>
+                </section>
+                <section>
+                    Yield
+                </section>
+            </section>
+            <section>
+                <section>
+                    Transforming Collections
+                </section>
+                <section>
+                  The Map operation
+                  <pre><code data-trim data-noescape><!--@formatter:off-->
+scala> a.map(i=>i*10)
+res2: Array[Int] = Array(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
+
+scala> a.map(_*10)
+res3: Array[Int] = Array(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
+
+scala> val b = Array(1.0,2,"3",4.0,5,"6")
+b: Array[Any] = Array(1.0, 2, 3, 4.0, 5, 6)
+
+scala> b.map {
+     |   case i:Int => i*10
+     |   case i:Double => i*10.toInt
+     |   case i:String => i.toInt *10
+     |   case _ => 0
+     | }
+res5: Array[Double] = Array(10.0, 20.0, 30.0, 40.0, 50.0, 60.0)
+
+<!--@formatter:on--></code></pre>
+                </section>
+                <section>
+                  The Filter operation
+                  <pre><code data-trim data-noescape><!--@formatter:off-->
+scala> a.filter(_%2!=0)
+res6: Array[Int] = Array(1, 3, 5, 7, 9)
+
+scala> a.filter(_%2==0)
+res7: Array[Int] = Array(2, 4, 6, 8, 10)
+
+scala> a.filter(i=> i%2==0)
+res8: Array[Int] = Array(2, 4, 6, 8, 10)
+
+scala> a.filter(i=> {
+     | val reminder = i%2
+     | reminder==0
+     | }
+     | )
+res9: Array[Int] = Array(2, 4, 6, 8, 10)
+<!--@formatter:on--></code></pre>
+                </section>
+            </section>
+            <section>
+                <h3>Thank you</h3>
+                <p>
+                    <br> Next Slide : <a href="4-scala-functions.html">4- Scala-functions</a>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </p>
+                <div class="bottom-text-div">
+                    <span> By <a href="https://github.com/vishnu667">Vishnu Prasad</a></span>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.js"></script>
+
+    <script>
         Reveal.initialize({
             controls: true,
             progress: true,
@@ -215,8 +284,7 @@ res28: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(8, 1, 2, 3, 6)
                 async: true
             }]
         });
-
-</script>
+    </script>
 
 </body>
 
