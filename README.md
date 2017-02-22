@@ -1,4 +1,4 @@
-# Slides for Scala Presentation
+# Slides for General Presentations
 
 
 [Checkout the link](http://vishnu667.github.io/slides/)
