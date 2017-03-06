@@ -1,0 +1,152 @@
+<html>
+
+<head>
+    <title>Web Analytics</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="../css/reveal.css">
+
+    <!-- Themes -->
+    <link rel="stylesheet" href="../css/theme/sky.css" id="theme">
+    <!-- <link rel="stylesheet" href="../css/theme/league.css" id="theme"> -->
+
+    <!-- Code syntax highlighting -->
+    <!-- <link rel="stylesheet" href="../lib/css/zenburn.css"> -->
+    <link rel="stylesheet" href="../css/highlight/github.css">
+
+    <!-- Custom Css  -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!--[if lt IE 9]>
+    <script src="../lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <style>
+    .reveal h3, .reveal h4 { font-weight:bold; }
+    .reveal .sl-block {
+      display: block;
+      position: absolute;
+      z-index: auto;
+    }
+    </style>
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <!-- 1.1) Introduction to scala and Functional Programming -->
+        <section>
+            <h3> Web Analytics & User Tracking</h3>
+            <br><br><br>
+            <div class="bottom-text-div">
+                <span> Be ready to crunch some data</span>
+            </div>
+        </section>
+        <section>
+            <h3>Existing Tools</h3>
+            <p>
+                <ul>
+            <li>Google Analytics</li>
+            <li>Mix Panel</li>
+        </ul>
+            </p>
+        </section>
+        <section>
+            <h3>What are they missing?</h3>
+            <p>
+                <ul>
+            <li>Correlating data from multiple sites/sources</li>
+            <li>Inability to extract user segments based on Activity.</li>
+            <li>Access to granular Data.</li>
+        </ul>
+            </p>
+        </section>
+        <section>
+            <h3>What we are trying to Solve</h3>
+            <p>
+                <ul>
+            <li>
+                Collective Analytics Across sites/sources
+            </li>
+            <li>Ability to send out user level data to third party sources, For dynamic retargeting.</li>
+            <li>Cookie sync to enable adding users to third party user segments.</li>
+        </ul>
+            </p>
+        </section>
+        <section>
+            <h3>User Tracking</h3>
+            <p>
+                <ul>
+            <li>Dynamically segmenting users based on the content that they are browsing.</li>
+            <li>Using Topic modelling to Categorize content.</li>
+            <li>Clustering users based on the content that they are browsing.</li>
+        </ul>
+            </p>
+        </section>
+        <section>
+            <h3>Granular Data</h3>
+            <p>
+                <ul>
+            <li>Access to Granular Data from Site to user level. </li>
+            <li>Ability to build more models based on the data. (Recommendation engines)</li>
+            <li>Custom access to each record including user & content segment information.</li>
+        </ul>
+            </p>
+        </section>
+        <section>
+            <h3>Thank you</h3>
+        </section>
+    </div>
+</div>
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+
+<script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            slideNumber: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [{
+                src: '../lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            }, {
+                src: '../plugin/markdown/marked.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: '../plugin/markdown/markdown.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: '../plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: '../plugin/zoom-js/zoom.js',
+                async: true
+            }, {
+                src: '../plugin/notes/notes.js',
+                async: true
+            }]
+        });
+</script>
+
+</body>
+
+</html>
